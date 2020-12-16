@@ -8,13 +8,12 @@ cache:
     - node_modules
 before_install:
   - npm install -g @lhci/cli@0.6.x
-script:
-  - yarn test:unit
+
 before_deploy:
   - npm install netlify-cli -g
   - yarn build
   - lhci autorun
-  
+
 deploy:
   provider: script
   edge: true
